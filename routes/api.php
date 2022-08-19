@@ -12,7 +12,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware(['auth:api'])->group(function () {
-    Route::get('send-sms', [SendSmsController::class, 'sendSms']);
+    Route::post('send-sms', [SendSmsController::class, 'sendSms']);
     Route::get('log-sms', [LogSmsController::class, 'index']);
     Route::get('log-sms/{id}', [LogSmsController::class, 'show']);
 });
